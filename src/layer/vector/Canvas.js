@@ -57,8 +57,9 @@ export var Canvas = Renderer.extend({
 		this._draw();
 	},
 
-	_initContainer: function () {
-		var container = this._container = document.createElement('canvas');
+	_initContainer: function (options) {
+		console.log('rendering canvas: ', options.canvas);
+		var container = this._container = options.canvas ? options.canvas : document.createElement('canvas');
 
 		DomEvent.on(container, 'mousemove', this._onMouseMove, this);
 		DomEvent.on(container, 'click dblclick mousedown mouseup contextmenu', this._onClick, this);
