@@ -49,7 +49,7 @@ export var Renderer = Layer.extend({
 
 	onAdd: function () {
 		if (!this._container) {
-			this._initContainer(); // defined by renderer implementations
+			this._initContainer(this.options); // defined by renderer implementations
 
 			if (this._zoomAnimated) {
 				DomUtil.addClass(this._container, 'leaflet-zoom-animated');
